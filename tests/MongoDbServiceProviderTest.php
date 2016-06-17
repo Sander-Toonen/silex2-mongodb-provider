@@ -55,7 +55,7 @@ class MongoDbServiceProviderTest extends \PHPUnit_Framework_TestCase
         $document = ['foo' => 'bar'];
         $result = $collection->insertOne($document);
         $this->assertInstanceOf('\MongoDB\InsertOneResult', $result);
-        $this->assertArrayHasKey('_id', $document);
+        $this->assertSame(1, $result->getInsertedCount());
         $database->dropCollection('test');
     }
 }
