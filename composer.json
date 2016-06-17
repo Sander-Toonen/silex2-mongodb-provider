@@ -1,0 +1,31 @@
+{
+    "name": "xatoo/silex2-mongodb-provider",
+    "type": "library",
+    "description":  "MongoDB service provider for the Silex 2 framework.",
+    "keywords": ["mongodb", "database", "mongo", "provider", "silex"],
+    "homepage": "https://github.com/Sander-Toonen/silex-mongodb-provider",
+    "license":  "MIT",
+    "authors": [
+        {
+            "name": "Sander Toonen",
+            "email": "s.toonen@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "pimple/pimple": "~3.0",
+        "silex/silex": "~2.0"
+    },
+    "require-dev": {
+        "satooshi/php-coveralls": "*",
+        "phpunit/phpunit": "~5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xatoo\\Silex\\ServiceProvider\\": "src/"
+        }
+    },
+    "suggest": {
+        "mongodb/mongodb": "Provides a high-level abstraction around the lower-level MongoDB PHP driver"
+    }
+}
