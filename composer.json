@@ -18,7 +18,7 @@
         "mongodb/mongodb": "~1.0"
     },
     "require-dev": {
-        "satooshi/php-coveralls": "*",
+        "satooshi/php-coveralls": "~1.0",
         "phpunit/phpunit": "~5.4"
     },
     "autoload": {

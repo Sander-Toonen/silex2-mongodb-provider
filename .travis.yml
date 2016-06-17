@@ -15,12 +15,15 @@ cache:
     - $HOME/.composer/cache
 
 before_install:
+  - mkdir -p build/logs
   - composer self-update
   - echo 'extension=mongodb.so' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - composer install --dev --no-interaction --prefer-source
 
-after_script:
-  - php vendor/bin/coveralls
+after_success:
+  - travis_retry php vendor/bin/coveralls
+  # or enable logging
+  - travis_retry php vendor/bin/coveralls -v
 
 notifications:
   email: "s.toonen@gmail.com"
