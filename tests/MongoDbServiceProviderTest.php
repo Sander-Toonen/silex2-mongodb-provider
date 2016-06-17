@@ -53,7 +53,8 @@ class MongoDbServiceProviderTest extends \PHPUnit_Framework_TestCase
         $database = $mongodb->selectDatabase('xatoo-silex2-mongodb-provider');
         $collection = $database->selectCollection('test');
         $document = ['foo' => 'bar'];
-        $collection->insert($document);
+        $result = $collection->insertOne($document);
+        $this->assertInstanceOf('\MongoDB\InsertOneResult', $result);
         $this->assertArrayHasKey('_id', $document);
         $database->dropCollection('test');
     }
