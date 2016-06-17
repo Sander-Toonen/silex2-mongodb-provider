@@ -13,7 +13,7 @@
         >
 
     <testsuites>
-        <testsuite name="MongoServiceProvider Test Suite">
+        <testsuite name="MongoDbServiceProvider Test Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
