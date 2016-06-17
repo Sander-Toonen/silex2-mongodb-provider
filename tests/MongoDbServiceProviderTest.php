@@ -2,6 +2,7 @@
 
 namespace Xatoo\Silex\tests;
 
+use Pimple\Container;
 use Silex\Application;
 use Xatoo\Silex\ServiceProvider\MongoDbServiceProvider;
 
