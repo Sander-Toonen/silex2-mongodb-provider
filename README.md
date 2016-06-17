@@ -1,11 +1,17 @@
 # Silex 2 MongoDb Provider
-[![Build Status](https://travis-ci.org/Sander-Toonen/silex2-mongodb-provider.svg?branch=master)](https://travis-ci.org/Sander-Toonen/silex2-mongodb-provider) [![Coverage Status](https://coveralls.io/repos/github/Sander-Toonen/silex2-mongodb-provider/badge.svg?branch=master)](https://coveralls.io/github/Sander-Toonen/silex2-mongodb-provider?branch=master) [![Dependency Status](https://www.versioneye.com/user/projects/57641b6e0735400045bbf9b0/badge.svg)](https://www.versioneye.com/user/projects/57641b6e0735400045bbf9b0) [![StyleCI](https://styleci.io/repos/61384671/shield)](https://styleci.io/repos/61384671)
+[![Build Status](https://travis-ci.org/Sander-Toonen/silex2-mongodb-provider.svg?branch=master)](https://travis-ci.org/Sander-Toonen/silex2-mongodb-provider) [![Coverage Status](https://coveralls.io/repos/github/Sander-Toonen/silex2-mongodb-provider/badge.svg?branch=master)](https://coveralls.io/github/Sander-Toonen/silex2-mongodb-provider?branch=master) [![Dependency Status](https://www.versioneye.com/user/projects/57641b6e0735400045bbf9b0/badge.svg)](https://www.versioneye.com/user/projects/57641b6e0735400045bbf9b0) [![StyleCI](https://styleci.io/repos/61393876/shield)](https://styleci.io/repos/61393876)
 
-[MongoDB](http://mongodb.org/) service provider for the [Silex 2](http://silex.sensiolabs.org/) framework. Based on the Silex 1 service provider created by [Moriony](https://github.com/moriony). Tested with PHP7 and the [MongoDB library](http://mongodb.github.io/mongo-php-library/).
+[MongoDB](http://mongodb.org/) service provider for the [Silex 2](http://silex.sensiolabs.org/) framework. Tested with PHP7 and the [MongoDB library](http://mongodb.github.io/mongo-php-library/).
 
-## Install via composer
+## Requirements
 
-Add in your ```composer.json``` the require entry for this library.
+ * PHP 5.6 or PHP 7
+ * PHP [MongoDB driver](http://php.net/manual/en/set.mongodb.php)
+ * [MongoDB PHP Library](http://mongodb.github.io/mongo-php-library/)
+
+## Installation
+
+Add the required entry for this library to your ```composer.json```.
 ```json
 {
     "require": {
@@ -18,7 +24,7 @@ and run ```composer install``` (or ```update```) to download all files.
 ## Usage
 
 ### Service registration
-```php
+``` {.php}
 $app->register(new MongoDBServiceProvider, [
     'mongodb.configuration' => [
         'default' => [
@@ -30,13 +36,17 @@ $app->register(new MongoDBServiceProvider, [
 ```
 
 ###  Connections retrieving
-```php
+``` {.php}
 $connections = $app['mongodb'];
 $defaultConnection = $connections['default'];
 ```
 
-###  Creating mongo connection via factory
+###  Creating a mongo connection via the factory
 ```php
 $mongoFactory = $app['mongodb.factory'];
 $customConnection = $mongoFactory("mongodb://localhost:27017", ["connect" => true]);
 ```
+
+## Copyright
+
+* Sander Toonen <s.toonen@gmail.com>
