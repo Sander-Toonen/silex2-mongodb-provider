@@ -6,7 +6,7 @@ use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
 /**
- * MongoDb service provider
+ * MongoDb service provider.
  *
  * @author Sander Toonen <s.toonen@gmail.com>
  */
@@ -44,8 +44,8 @@ class MongoDbServiceProvider implements ServiceProviderInterface
                     return $container[MongoDbServiceProvider::MONGODB_FACTORY]($options['server'], $options['options']);
                 };
             }
+
             return $connections;
         };
     }
 }
-

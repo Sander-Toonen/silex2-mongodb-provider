@@ -14,7 +14,8 @@
     "require": {
         "php": ">=5.6",
         "pimple/pimple": "~3.0",
-        "silex/silex": "~2.0"
+        "silex/silex": "~2.0",
+        "mongodb/mongodb": "~1.0"
     },
     "require-dev": {
         "satooshi/php-coveralls": "*",
@@ -24,8 +25,5 @@
         "psr-4": {
             "Xatoo\\Silex\\ServiceProvider\\": "src/"
         }
-    },
-    "suggest": {
-        "mongodb/mongodb": "Provides a high-level abstraction around the lower-level MongoDB PHP driver"
     }
 }
